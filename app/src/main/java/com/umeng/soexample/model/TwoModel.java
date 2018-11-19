@@ -23,7 +23,7 @@ public class TwoModel {
                 User user = gson.fromJson(s, User.class);
                 //String msg = user.getMsg();
                 //callBack.getData(msg);
-                for (int i = 0; i < 20; i++) {
+                for (int i = 0; i < mList.size(); i++) {
                     mList.addAll(user.getData().get(i+1).getList());
                 }
 

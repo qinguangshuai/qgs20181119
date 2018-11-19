@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -45,7 +46,15 @@ public class TwoAdapter extends RecyclerView.Adapter<TwoAdapter.MyViewHolder> {
         String images = list.get(i).getImages();
         String[] str = images.split("!");
         Picasso.with(mContext).load(str[0]).into(myViewHolder.image);
-
+        if(i!=0){
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(myViewHolder.image.getLayoutParams());
+            params.setMargins(0,100,0,0);
+            myViewHolder.image.setLayoutParams(params);
+        }else{
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(myViewHolder.image.getLayoutParams());
+            params.setMargins(0,20,0,0);
+            myViewHolder.image.setLayoutParams(params);
+        }
     }
 
     @Override
